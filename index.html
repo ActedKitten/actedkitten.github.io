@@ -13,7 +13,9 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -22,7 +24,7 @@
 
         .container {
             text-align: center;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 4em 3em;
             border-radius: 10px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
@@ -105,14 +107,39 @@
 <body>
     <div class="container">
         <h1>Welcome</h1>
-        <p>Hi, I'm Sojo!</p>
+        <p>Hi, I'm Sojo</p>
         
         <div class="links">
             <a href="https://actedkitten.github.io/blog">My Blog</a>
             <a href="https://github.com/ActedKitten" class="secondary">GitHub</a>
         </div>
 
-    
+        <div class="footer">
+            <p>&copy; 2026 Sojo. All rights reserved.</p>
+        </div>
     </div>
+
+    <script>
+        // 设置背景图片
+        function setBackground() {
+            const isMobile = window.innerWidth <= 768;
+            
+            if (isMobile) {
+                // 手机端：随机切换两个背景
+                const mobileImages = ['assets/images/background_Mobile1.jpg', 'assets/images/background_Mobile2.jpg'];
+                const randomImage = mobileImages[Math.floor(Math.random() * mobileImages.length)];
+                document.body.style.backgroundImage = `url('${randomImage}')`;
+            } else {
+                // 电脑端：使用固定背景
+                document.body.style.backgroundImage = `url('assets/images/background_PC.jpg')`;
+            }
+        }
+
+        // 页面加载时设置背景
+        setBackground();
+
+        // 窗口大小改变时重新设置背景
+        window.addEventListener('resize', setBackground);
+    </script>
 </body>
 </html>
