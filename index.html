@@ -128,12 +128,10 @@
                 // 手机端：随机切换两个背景
                 const mobileImages = ['assets/images/background_Mobile1.jpg', 'assets/images/background_Mobile2.jpg'];
                 const randomImage = mobileImages[Math.floor(Math.random() * mobileImages.length)];
-                document.body.style.backgroundImage = `url('${randomImage}')`;
-                background-attachment: fixed;
+                document.body.style.backgroundImage = `url('${randomImage}')`; 
             } else {
                 // 电脑端：使用固定背景
                 document.body.style.backgroundImage = `url('assets/images/background_PC.jpg')`;
-                background-attachment: fixed;
             }
         }
 
