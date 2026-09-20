@@ -3,143 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sojo's home site</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-size: 125%;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 4em 3em;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
-            width: 90%;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            color: #2c3e50;
-            margin-bottom: 0.5em;
-        }
-
-        p {
-            font-size: 1.1em;
-            color: #666;
-            margin-bottom: 2em;
-        }
-
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-        }
-
-        a {
-            display: inline-block;
-            padding: 1em 2em;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: 500;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        a.secondary {
-            background: #f0f0f0;
-            color: #2c3e50;
-            border: 2px solid #667eea;
-        }
-
-        a.secondary:hover {
-            background: #667eea;
-            color: white;
-        }
-
-        .footer {
-            margin-top: 3em;
-            color: #999;
-            font-size: 0.9em;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 2em 1.5em;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            p {
-                font-size: 1em;
-            }
-
-            a {
-                padding: 0.8em 1.5em;
-                font-size: 1em;
-            }
-        }
-    </style>
+    <title>Sojo's homesite</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div class="container">
-        <h1>Welcome</h1>
-        <p>Hi, I'm Sojo</p>
-        
-        <div class="links">
-            <a href="https://actedkitten.github.io/blog">My Blog</a>
-            <a href="https://github.com/ActedKitten" class="secondary">GitHub</a>
-        </div>
-
-        <div class="footer">
-            <p>&copy; 2026 Sojo. All rights reserved.</p>
+<body class="is-loading">
+    <div class="loader" aria-live="polite" aria-label="页面加载中">
+        <div class="loader__panel">
+            <div class="loader__ring" aria-hidden="true"></div>
+            <div class="loader__text">
+                <span class="loader__title">Sojo's Home</span>
+                <span class="loader__subtitle">Loading ...</span>
+            </div>
+            <div class="loader__bar" aria-hidden="true"></div>
         </div>
     </div>
 
-    <script>
-        // 设置背景图片
-        function setBackground() {
-            const isMobile = window.innerWidth <= 768;
+    <div class="page-shell">
+        <div class="container">
+            <h1>Welcome</h1>
+            <p>Hi, I'm Sojo</p>
             
-            if (isMobile) {
-                // 手机端：随机切换两个背景
-                const mobileImages = ['assets/images/background_Mobile1.jpg', 'assets/images/background_Mobile2.jpg'];
-                const randomImage = mobileImages[Math.floor(Math.random() * mobileImages.length)];
-                document.body.style.backgroundImage = `url('${randomImage}')`; 
-            } else {
-                // 电脑端：使用固定背景
-                document.body.style.backgroundImage = `url('assets/images/background_PC.jpg')`;
-            }
-        }
+            <div class="links">
+                <a href="https://actedkitten.github.io/blog">My Blog</a>
+                <a href="https://github.com/ActedKitten" class="secondary">GitHub</a>
+            </div>
 
-        // 页面加载时设置背景
-        setBackground();
+            <div class="footer">
+                <p>&copy; 2026 Sojo. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
 
-        // 窗口大小改变时重新设置背景
-        window.addEventListener('resize', setBackground);
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
