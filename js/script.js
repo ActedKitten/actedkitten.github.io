@@ -1,13 +1,13 @@
 const MOBILE_IMAGES = [
-    'assets/images/background_Mobile1.jpg',
-    'assets/images/background_Mobile2.jpg'
+    'assets/images/background/background_Mobile1.jpg',
+    'assets/images/background/background_Mobile2.jpg'
 ];
 
 function setBackground() {
     const isMobile = window.innerWidth <= 768;
     const bgImage = isMobile
         ? MOBILE_IMAGES[Math.floor(Math.random() * MOBILE_IMAGES.length)]
-        : 'assets/images/background_PC.jpg';
+        : 'assets/images/background/background_PC.jpg';
 
     document.body.style.backgroundImage = `linear-gradient(rgba(20, 30, 40, 0.28), rgba(20, 30, 40, 0.28)), url('${bgImage}')`;
 }
@@ -30,9 +30,9 @@ function revealPage() {
 
 async function preparePage() {
     const imageList = [
-        'assets/images/background_PC.jpg',
-        'assets/images/background_Mobile1.jpg',
-        'assets/images/background_Mobile2.jpg'
+        'assets/images/background/background_PC.jpg',
+        'assets/images/background/background_Mobile1.jpg',
+        'assets/images/background/background_Mobile2.jpg'
     ];
     const minimumLoaderTime = 3000;
     const startTime = performance.now();
