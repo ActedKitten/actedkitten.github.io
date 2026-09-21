@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sojo's homesite</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loader.css">
 </head>
 <body class="is-loading">
     <div class="loader" aria-live="polite" aria-label="页面加载中">
@@ -19,19 +20,29 @@
     </div>
 
     <div class="page-shell">
-        <div class="container">
-            <h1>Welcome</h1>
-            <p>Hi, I'm Sojo</p>
-            
-            <div class="links">
-                <a href="https://actedkitten.github.io/blog">My Blog</a>
-                <a href="https://github.com/ActedKitten" class="secondary">GitHub</a>
-            </div>
+        <main class="home">
+            <section class="hero-card" aria-labelledby="welcome-title">
+                <header class="hero-card__header">
+                    <span class="eyebrow">Home</span>
+                </header>
 
-            <div class="footer">
-                <p>&copy; 2026 Sojo. All rights reserved.</p>
-            </div>
-        </div>
+                <div class="hero-card__body">
+                    <div class="hero-card__intro">
+                        <h1 id="welcome-title">Welcome</h1>
+                        <p class="lead">Hi, I'm Sojo</p>
+                    </div>
+
+                    <nav class="site-links" aria-label="Main navigation">
+                        <a href="https://actedkitten.github.io/blog">My Blog</a>
+                        <a href="https://github.com/ActedKitten" class="secondary">GitHub</a>
+                    </nav>
+                </div>
+
+                <footer class="site-footer">
+                    <p>&copy; 2026 Sojo. All rights reserved.</p>
+                </footer>
+            </section>
+        </main>
     </div>
 
     <script src="js/script.js"></script>

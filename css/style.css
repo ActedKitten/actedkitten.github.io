@@ -58,7 +58,15 @@ body.loaded .page-shell {
     transform: translateY(0);
 }
 
-.container {
+.home {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.hero-card {
     text-align: center;
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.22);
@@ -69,26 +77,51 @@ body.loaded .page-shell {
     width: 70%;
 }
 
+.hero-card__header {
+    margin-bottom: 1.25rem;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 0.74rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-card__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 h1 {
     font-size: 2.5em;
     color: #f3f7ff;
-    margin-bottom: 0.5em;
+    margin: 0;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
 }
 
-p {
+.lead,
+.site-footer p {
     font-size: 1.1em;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2em;
+    margin: 0;
 }
 
-.links {
+.site-links {
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
 
-a {
+.site-links a {
     display: inline-block;
     padding: 1em 2em;
     background: rgba(118, 155, 255, 0.18);
@@ -102,129 +135,31 @@ a {
     box-shadow: 0 10px 22px rgba(22, 35, 52, 0.18);
 }
 
-a:hover {
+.site-links a:hover {
     transform: translateY(-2px);
     box-shadow: 0 14px 28px rgba(22, 35, 52, 0.24);
     background: rgba(118, 155, 255, 0.38);
 }
 
-a.secondary {
+.site-links a.secondary {
     background: rgba(255, 255, 255, 0.14);
     color: #f3f7ff;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-a.secondary:hover {
+.site-links a.secondary:hover {
     background: rgba(118, 155, 255, 0.42);
     color: white;
 }
 
-.footer {
+.site-footer {
     margin-top: 3em;
     color: rgba(255, 255, 255, 0.72);
     font-size: 0.9em;
 }
 
-.loader {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background:
-        radial-gradient(circle at top, rgba(100, 160, 255, 0.18), transparent 34%),
-        linear-gradient(180deg, rgba(10, 18, 26, 0.98), rgba(7, 12, 18, 1));
-    z-index: 50;
-    transition: opacity 0.7s ease, visibility 0.7s ease;
-}
-
-body.loaded .loader {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.loader__panel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    min-width: min(88vw, 360px);
-    padding: 2rem 1.5rem 1.5rem;
-    border: 1px solid var(--bg-line);
-    border-radius: 18px;
-    background: rgba(14, 22, 33, 0.72);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
-}
-
-.loader__ring {
-    width: 52px;
-    height: 52px;
-    border: 3px solid rgba(255, 255, 255, 0.12);
-    border-top-color: var(--loader-accent);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    box-shadow: 0 0 20px rgba(141, 196, 255, 0.35);
-}
-
-.loader__text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.3rem;
-    color: var(--loader-text);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.loader__title {
-    font-size: 0.78rem;
-    font-weight: 700;
-    opacity: 0.96;
-}
-
-.loader__subtitle {
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    opacity: 0.7;
-}
-
-.loader__bar {
-    width: min(70vw, 220px);
-    height: 4px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 999px;
-    overflow: hidden;
-    position: relative;
-}
-
-.loader__bar::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    width: 40%;
-    background: linear-gradient(90deg, rgba(141, 196, 255, 0), rgba(141, 196, 255, 0.9), rgba(141, 196, 255, 0));
-    animation: loading-bar 1.6s ease-in-out infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes loading-bar {
-    0% {
-        transform: translateX(-140%);
-    }
-    100% {
-        transform: translateX(240%);
-    }
-}
-
 @media (max-width: 600px) {
-    .container {
+    .hero-card {
         padding: 2em 1.5em;
     }
 
@@ -232,11 +167,12 @@ body.loaded .loader {
         font-size: 2em;
     }
 
-    p {
+    .lead,
+    .site-footer p {
         font-size: 1em;
     }
 
-    a {
+    .site-links a {
         padding: 0.8em 1.5em;
         font-size: 1em;
     }
