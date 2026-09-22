@@ -9,10 +9,10 @@
 </head>
 <body class="is-loading">
     <div class="loader" aria-live="polite" aria-label="页面加载中">
+        <div class="loader__scene" aria-hidden="true"></div>
         <div class="loader__panel">
-            <div class="loader__ring" aria-hidden="true"></div>
             <div class="loader__text">
-                <span class="loader__title">Sojo's Home</span>
+                <span class="loader__title">Powered by ActedKitten</span>
                 <span class="loader__subtitle">Loading ...</span>
             </div>
             <div class="loader__bar" aria-hidden="true"></div>
@@ -21,7 +21,7 @@
 
     <div class="page-shell">
         <main class="home">
-            <section class="hero-card" aria-labelledby="welcome-title">
+            <section class="hero-card hero-card--featured" aria-labelledby="welcome-title">
                 <header class="hero-card__header">
                     <span class="eyebrow">Home</span>
                 </header>
@@ -41,6 +41,33 @@
                 <footer class="site-footer">
                     <p>&copy; 2026 Sojo. All rights reserved.</p>
                 </footer>
+            </section>
+
+            <section class="hero-card hero-card--small card-about" aria-labelledby="about-title">
+                <header class="hero-card__header">
+                    <span class="eyebrow">About</span>
+                </header>
+                <div class="hero-card__body">
+                    <div class="hero-card__intro">
+                        <h2 id="about-title">Who am I</h2>
+                        <p class="lead">I make small web experiments, notes, and personal projects.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="hero-card hero-card--small card-links" aria-labelledby="links-title">
+                <header class="hero-card__header">
+                    <span class="eyebrow">Links</span>
+                </header>
+                <div class="hero-card__body">
+                    <div class="hero-card__intro">
+                        <h2 id="links-title">Quick access</h2>
+                    </div>
+                    <nav class="site-links site-links--compact" aria-label="Secondary links">
+                        <a href="https://actedkitten.github.io/blog">Blog</a>
+                        <a href="https://github.com/ActedKitten" class="secondary">GitHub</a>
+                    </nav>
+                </div>
             </section>
         </main>
     </div>
